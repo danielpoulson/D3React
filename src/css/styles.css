@@ -1,128 +1,102 @@
-body {
-    background-color: #2c313b;
-
-    font-family: 'Roboto', sans-serif !important;
+svg {
+	width: 100%;
+	height: 100%;
 }
 
-h3{
-    color: #f8fdff;
-    padding-left: 20px;
-    padding-top: 20px;
-    opacity: .8;
-    font-weight: 400;
-    font-size: 20px;
-}
-
-.top{
-    margin-bottom: 10px;
-    background-color: #3f5175;
-    border-radius:4px;
-    height: 400px;
-    box-shadow: 1px 1px 1px 0px rgba(37,41,51,1);
-}
-
-.bottom-left{
-    background-color: #3f5175;
-    border-radius: 4px;
-    height: 400px;
-    box-shadow: 1px 1px 1px 0px rgba(37,41,51,1);
-}
-
-.bottom-right{
-    background-color: #3f5175;
-    border-radius: 4px;
-    height: 400px;
-
-    box-shadow: 1px 1px 1px 0px rgba(37,41,51,1);
-}
-
-.shadow {
-    -webkit-filter: drop-shadow( 0px 2px 2px rgba(0,0,0,.3) );
-    filter: drop-shadow( 0px 2px 2px rgba(0,0,0,.3) );
-}
-
-.pad{
-    padding:20px;
-}
-
-.browser-legend{
-    font-size:14px;
-    opacity:.8;
-}
-
-.bottom-left-svg{
-    padding-top:40px;
-    text-align: center;
-}
-
-
-.bottom-right-svg{
-    text-align: center;
-}
-
-.line {
-    fill: none;
-    stroke: #7dc7f4;
-    stroke-width: 5px;
-
-}
-
-.axis{
-    fill:#bbc7d9;
-    opacity: 1;
-}
+path {
+      fill: none;
+      stroke: #e57373;
+      stroke-width: 2px;
+    }
 
 .axis path,
 .axis line {
-    fill: none;
-    stroke: none;
-    shape-rendering: crispEdges;
-
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
 }
 
 .axis text {
-    font-size: 14px;
+    font-family: sans-serif;
+    font-size: 11px;
 }
 
-.y-grid .tick{
-    stroke: #4b5f87;
-    opacity: 1;
+.x.axis path {
+  display: none;
 }
 
-.default-svg{
-
+.cc-graph {
+  background-color: #f4f4f4;
+  margin: 10px 5px;
+  padding: 20px 0px;
+  border: solid #b2b2b2 1px;
+  border-radius: 5px;
 }
 
-
-.svg-container{
-    display: inline-block;
-    position: relative;
-    width: 100%;
-    padding-bottom: 100%;
-    vertical-align: middle;
-    overflow: hidden;
+.legend {
+	margin-bottom: 5px;
 }
 
-.svg-content {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left: 0;
+.rectclass {
+	stroke: #ED1B2C;
 }
 
-.fontSize {
-    font-size:.8em;
-    height: auto;
-    text-align: center;
+.dot {
+	fill: #ED1B2C;
 }
 
-.page-header{
-    height:35px;
-    textAlign:center;
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(#ED1B2C, 0.8);
+  color: #fff;
+  border-radius: 2px;
 }
 
-.page-h4{
-    line-height:35px;
-    color:rgb(125, 199, 244);
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
 
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+.grid .tick {
+    stroke: #a2a2a2;
+		stroke-dasharray: 3 3;
+    opacity: 0.5;
+}
+.grid path {
+  stroke-width: 0;
+}
+
+#chart {
+  width: 500px;
+  height: 300px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+#chartArea {
+  width: 500px;
+  height: 300px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+rect {
+	fill: #ED1B2C;
 }
