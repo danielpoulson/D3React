@@ -42,7 +42,7 @@ path {
 }
 
 .dot {
-	fill: #ED1B2C;
+	fill: #7a6fca;
 }
 
 .d3-tip {
@@ -99,4 +99,8 @@ path {
 
 rect {
 	fill: #ED1B2C;
+}
+
+.svgMain {
+	background-color: #e2e2e2;
 }
