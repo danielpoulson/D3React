@@ -5,7 +5,7 @@ svg {
 
 path {
       fill: none;
-      stroke: #e57373;
+      stroke: #92CAF9;
       stroke-width: 2px;
     }
 
@@ -19,6 +19,7 @@ path {
 .axis text {
     font-family: sans-serif;
     font-size: 11px;
+    color: white;
 }
 
 .x.axis path {
@@ -42,7 +43,7 @@ path {
 }
 
 .dot {
-	fill: #7a6fca;
+	fill: white;
 }
 
 .d3-tip {
@@ -102,5 +103,5 @@ rect {
 }
 
 .svgMain {
-	background-color: #e2e2e2;
+	background-color: #3F5277;
 }

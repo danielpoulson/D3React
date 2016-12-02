@@ -4,11 +4,18 @@ import './App.css';
 import './css/bootstrap.min.css';
 import './css/styles.css';
 import BarChart  from './bar-chart';
-import LineChart  from './line-chart';
-import LineChartNew  from './line-chart-new';
+import LineChart  from './chart/line-chart/line-chart';
+import LineChartNew  from './chart/line-chart/line-chart-new';
+import Messing  from './messing.js';
 
 class App extends Component {
   render() {
+    
+    const stylemessing = {
+      paddingTop: 20,
+      paddingLeft : 20
+    }
+
     return (
       <div className="container">
         <div className="row">
@@ -16,6 +23,9 @@ class App extends Component {
         </div>
         <div className="row">
           <LineChartNew className="" />
+        </div>
+        <div className="row" style={stylemessing}>
+          <Messing className="" />
         </div>
       </div>
     );

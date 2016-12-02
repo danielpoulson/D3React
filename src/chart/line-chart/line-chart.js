@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import * as d3 from 'd3';
 import tip from 'd3-tip';
 import _ from 'lodash';
-import { myData } from './data';
-import Dots from './dots';
-import Axis from './axis';
+import { myData } from '../../data';
+import Dots from '../common/dots';
+import XAxis from '../common/axis/XAxis';
+import YAxis from '../common/axis/YAxis';
 
 d3.tip = tip;
 
@@ -124,22 +125,28 @@ export default class LineChartNew extends Component{
         .domain(dates)
         .range([0, w]);
 
+
+
       const y = d3.scaleLinear()
         .domain([0, d3.max(counts)])
         .range([h, 0]);
 
-        const line = d3.line()
-          .curve(d3.curveCardinal)
-          .x(function (d) {
-            return x(d.date);
-          })
-          .y(function (d) {
-            return y(d.count);
-          });
+      const line = d3.line()
+        .curve(d3.curveCardinal)
+        .x(function (d) {
+          return x(d.date);
+        })
+        .y(function (d) {
+          return y(d.count);
+        });
+
+
 
        const transform='translate(' + margin.left + ',' + margin.top + ')';
        const yAxis = d3.axisRight(y).ticks(5);
        const xAxis = d3.axisBottom(x).ticks(5);
+
+       console.log();
 
     return (
       <div id="chart">
@@ -147,8 +154,8 @@ export default class LineChartNew extends Component{
           <g transform={transform}>
             <path d={line(data)} />
             <Dots data={data} x={x} y={y}/>
-            <Axis h={h} axis={yAxis} axisType="y" />
-            <Axis h={h} axis={xAxis} axisType="x" />
+            <XAxis w={w} h={h} axis={xAxis} data={data} x={x} y={y}/>
+            <YAxis w={w} h={h} axis={yAxis} />
           </g>
         </svg>
       </div>
