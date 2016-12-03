@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
 import AxisLine from './axis-line';
+import AxisTicks from './AxisTicks';
 
 class YAxis extends Component {
 	render() {
 		const props = this.props;
 		const t = `translate(${props.yAxisOffset}, 0)`;
 		return (
-	      <g className={props.yAxisClassName} transform={t} >
-	      	<AxisLine h={props.h} orient={props.yOrient} />
-	      </g>
+			<g className={props.yAxisClassName} transform={t} >
+				<AxisLine h={props.h} orient={props.yOrient} />
+				<AxisTicks 
+					scale={props.axis} 
+					x={props.x} 
+					y={props.y}
+					orient={props.yOrient} />
+			</g>
 		);
 	}
 }
@@ -24,6 +30,6 @@ YAxis.defaultProps = {
   yAxisOffset:    0,
   xOrient:        'bottom',
   yOrient:        'left'
-}
+};
 
 export default YAxis;

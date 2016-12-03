@@ -9,10 +9,18 @@ class XAxis extends Component {
 		const t = `translate(0 ,${props.h})`;
 
 		return (
-	      <g className={props.xAxisClassName} transform={t} >
-	      	<AxisLine d={props.line} w={props.w} orient={props.xOrient} />
-	      	<AxisTicks data={props.data} x={props.x} y={props.y}/>
-	      </g>
+			<g className={props.xAxisClassName} transform={t} >
+				<AxisLine 
+					d={props.line} 
+					w={props.w} 
+					orient={props.xOrient} />
+
+				<AxisTicks 
+					scale={props.xScale} 
+					x={props.x} 
+					y={props.y}
+					orient={props.xOrient} />
+			</g>
 		);
 	}
 }

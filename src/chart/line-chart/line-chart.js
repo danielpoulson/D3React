@@ -143,10 +143,13 @@ export default class LineChartNew extends Component{
 
 
        const transform='translate(' + margin.left + ',' + margin.top + ')';
-       const yAxis = d3.axisRight(y).ticks(5);
+       // const yAxis = d3.axisRight(y).ticks(5);
        const xAxis = d3.axisBottom(x).ticks(5);
 
-       console.log();
+       // let yAxis = [];
+
+       // console.log(x.ticks());
+       const yAxis = y.ticks(5).map(t => y(t));
 
     return (
       <div id="chart">
@@ -154,8 +157,8 @@ export default class LineChartNew extends Component{
           <g transform={transform}>
             <path d={line(data)} />
             <Dots data={data} x={x} y={y}/>
-            <XAxis w={w} h={h} axis={xAxis} data={data} x={x} y={y}/>
-            <YAxis w={w} h={h} axis={yAxis} />
+            <XAxis w={w} h={h} axis={xAxis} xScale={dates} data={data} x={x} y={y}/>
+            <YAxis w={w} h={h} axis={yAxis} yScale={counts} y={y} />
           </g>
         </svg>
       </div>
